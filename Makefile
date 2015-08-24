@@ -1,4 +1,7 @@
-all : MLDept.html
+all : MLDept1.out
 
-%.html : %.md %.bib
-	pandoc $< -o $@ --bibliography=MLDept.bib
+%.out : %.md
+	Rscript compile.R $< $@
+
+clean :
+	-rm -rf *.out
