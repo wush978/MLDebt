@@ -1,4 +1,4 @@
 all : MLDept.html
 
-%.html : %.md
-	pandoc $< -o $@
+%.html : %.md %.bib
+	pandoc $< -o $@ --bibliography=MLDept.bib
